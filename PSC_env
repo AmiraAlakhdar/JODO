@@ -1,0 +1,17 @@
+module load cuda/11.7.1
+
+module load anaconda3
+
+conda create --name jodo -c conda-forge python=3.8
+
+conda activate jodo
+
+cd /ocean/projects/che230035p/shared/JODO/JODO
+
+CUDA_PATH='/opt/packages/cuda/v11.7.1/bin/nvcc'
+
+conda install -c conda-forge molsets=0.3.1
+
+conda install pytorch torchvision torchaudio pytorch-cuda=11.7 -c pytorch -c nvidia
+
+pip install -r requirements.txt
